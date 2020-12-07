@@ -1,0 +1,69 @@
+{
+  "name": "interac-etransfer-node-sample",
+  "version": "0.0.0",
+  "description": "Shows how to use the e-transfer api",
+  "engineStrict": true,
+  "license": "LGPL-3.0-only",
+  "engines": {
+    "node": ">= 8.9.0"
+  },
+  "devDependencies": {
+    "@types/colors": "^1.2.1",
+    "@types/faker": "^5.1.4",
+    "@types/jest": "~26.0.15",
+    "@types/node": "~14.14.7",
+    "@types/request": "^2.48.5",
+    "@types/request-promise": "^4.1.46",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^30.7.8",
+    "eslint-plugin-no-null": "^1.0.2",
+    "eslint-plugin-prefer-arrow": "^1.2.2",
+    "eslint-plugin-unicorn": "^23.0.0",
+    "install": "^0.13.0",
+    "jest": "~26.6.3",
+    "npm": "^6.14.8",
+    "rimraf": "~3.0.2",
+    "ts-jest": "~26.4.4",
+    "typescript": "^4.0.5"
+  },
+  "scripts": {
+    "clean": "rimraf coverage build tmp",
+    "build": "tsc -p tsconfig.release.json",
+    "watch": "tsc -w -p tsconfig.release.json",
+    "lint2": "eslint -c .eslintrc.js --ext .ts src",
+    "lint3": "eslint -c .eslintrc.js --ext .ts src --fix",
+    "pretest": "npm run lint",
+    "test": "npm run test-only",
+    "test-only": "jest --coverage",
+    "test:watch": "jest --watch",
+    "auth": "node build/src/authenticate",
+    "contact": "node build/src/contact",
+    "request-money": "node build/src/requestMoney",
+    "remove-all-contacts": "node build/src/removeAllContacts"
+  },
+  "contributors": [
+    {
+      "name": "Ryan Lee"
+    },
+    {
+      "name": "Jordan Crombie"
+    }
+  ],
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "faker": "^5.1.0",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "tslib": "~2.0.3",
+    "util": "^0.12.3",
+    "uuid": "^8.3.1"
+  }
+}
